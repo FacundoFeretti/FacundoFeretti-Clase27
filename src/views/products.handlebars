@@ -1,0 +1,27 @@
+{{#if result.isValid}}
+    <h1>Bienvenido! {{user.email}}</h1>
+    <a href="/api/sessions/logout"><button>Cerrar Sesion</button></a>
+    <div>
+        {{#each result.docs}}
+            <div>
+                <p>Product: {{this.title}} &nbsp; {{this.description}}</p>
+                <p>Categoria: {{this.category}} &nbsp; Precio: {{this.price}}</p>
+                <button>Agregar al carrito</button>
+            </div>
+        {{/each}}
+    </div>
+    <br/>
+    <div>
+        {{#if result.hasPrevPage}}
+            <a href={{result.prevLink}}>Anterior </a>
+        {{/if}}
+        &nbsp;
+        {{result.page}}
+        &nbsp;
+        {{#if result.hasNextPage}}
+            <a href={{result.nextLink}}> Siguiente</a>
+        {{/if}}
+    </div>
+{{else}}
+    <h1>No hay productos para mostrar</h1>
+{{/if}}
