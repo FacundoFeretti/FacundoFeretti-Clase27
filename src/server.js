@@ -7,7 +7,7 @@ import initializePassportGitHub from "./config/github.passport.js";
 import cookieParser from "cookie-parser";
 import { initializePassportLocal } from "./config/passport.config.js";
 import { initializePassportJWT } from "./config/jwt.passport.js";
-import config from '../config.js'
+import config from "./config.js";
 
 
 import __dirname from './utils.js';
